@@ -1,13 +1,12 @@
-import axios from 'axios'
+import axios from 'axios';
 
-function HttpClient() {
-	return {
-		get: axios.get,
-		post: axios.post,
-		patch: axios.patch,
-		put: axios.put,
-		delete: axios.delete,
-	}
-}
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000'; // Defina a URL base
 
-export default HttpClient()
+const HttpClient = axios.create({
+    baseURL,
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+export default HttpClient;
