@@ -15,9 +15,9 @@ import {
 import { Link, Navigate } from 'react-router-dom'
 import logoDark from '@/assets/images/logo-sm-dark.png'
 import { FormInputPassword, FormTextInput, PageMetaData } from '@/components'
-import RegisterForm from '../Register/RegisterForm'
 import useLogin from './useLogin'
 import AuthLayout from '../AuthLayout'
+import Register from '../Register'
 
 const Login = () => {
 	const { loading, control, login, redirectUrl, isAuthenticated } = useLogin()
@@ -50,10 +50,10 @@ const Login = () => {
 						<TabContainer defaultActiveKey="1">
 							<Nav className="nav-border nav-pills" role="tablist">
 								<NavItem>
-									<NavLink eventKey="1">Log In</NavLink>
+									<NavLink eventKey="1">Entrar</NavLink>
 								</NavItem>
 								<NavItem>
-									<NavLink eventKey="2">Register</NavLink>
+									<NavLink eventKey="2">Cadastrar</NavLink>
 								</NavItem>
 							</Nav>
 
@@ -70,13 +70,13 @@ const Login = () => {
 											label="Email"
 											containerClass="mb-2"
 											control={control}
-											placeholder="Enter email"
+											placeholder="digite seu e-mail"
 										/>
 										<FormInputPassword
 											name="password"
 											label="Password"
 											control={control}
-											placeholder="Enter password"
+											placeholder="digite sua senha"
 										/>
 
 										<Row className="form-group my-3">
@@ -91,7 +91,7 @@ const Login = () => {
 														className="form-label text-muted"
 														htmlFor="customSwitchSuccess"
 													>
-														Remember me
+														Mantenha-me conectado.
 													</label>
 												</div>
 											</Col>
@@ -100,7 +100,7 @@ const Login = () => {
 													to="/auth-recover-pw"
 													className="text-muted font-13"
 												>
-													<i className="dripicons-lock"></i> Forgot password?
+													<i className="dripicons-lock"></i> Esqueceu sua senha?
 												</Link>
 											</Col>
 										</Row>
@@ -113,34 +113,23 @@ const Login = () => {
 													disabled={loading}
 													type="submit"
 												>
-													Log In
+													Entrar
 													<i className="fas fa-sign-in-alt ms-1"></i>
 												</Button>
 											</Col>
 										</div>
 									</form>
-									<div className="m-3 text-center text-muted">
-										<p className="mb-0">
-											Don't have an account ?{' '}
-											<Link to="/auth-register" className="text-primary ms-2">
-												Free Resister
-											</Link>
-										</p>
-									</div>
-									<div className="account-social">
+									{/* <div className="account-social">
 										<h6 className="mb-3">Or Login With</h6>
-									</div>
-									<div className="btn-group w-100">
+									</div> */}
+									{/* <div className="btn-group w-100">
 										<Button variant="outline-secondary" size="sm">
 											Facebook
 										</Button>
 										<Button variant="outline-secondary" size="sm">
-											Twitter
-										</Button>
-										<Button variant="outline-secondary" size="sm">
 											Google
 										</Button>
-									</div>
+									</div> */}
 								</TabPane>
 
 								<TabPane
@@ -149,13 +138,7 @@ const Login = () => {
 									id="Register_Tab"
 									role="tabpanel"
 								>
-									<RegisterForm />
-									<p className="my-3 text-muted">
-										Already have an account ?
-										<Link to="/auth-login" className="text-primary ms-2">
-											Log in
-										</Link>
-									</p>
+									<Register />
 								</TabPane>
 							</TabContent>
 						</TabContainer>

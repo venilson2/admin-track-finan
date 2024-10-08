@@ -40,7 +40,7 @@ export default function useLogin() {
 	const login = handleSubmit(async function (values: LoginFormFields) {
 		setLoading(true)
 		try {
-			const res: AxiosResponse<User> = await HttpClient.post('/login', {
+			const res: AxiosResponse<User> = await HttpClient.post('auth/login', {
 				'email': values.email,
 				'password': values.password,
 			})
