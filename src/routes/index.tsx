@@ -112,6 +112,7 @@ const MaterialDesignIcons = lazy(
 )
 
 const Widgets = lazy(() => import('@/pages/widgets'))
+const Transactions = lazy(() => import('@/pages/transactions'))
 
 export type RoutesProps = {
 	path: RouteProps['path']
@@ -621,6 +622,14 @@ const widgetsRoutes: RoutesProps[] = [
 	},
 ]
 
+const TransactionsRoutes: RoutesProps[] = [
+	{
+		path: '/transactions',
+		name: 'Widgets',
+		element: <Transactions />,
+	},
+]
+
 const allUiRoutes = [
 	...uiRoutes,
 	...mapsRoutes,
@@ -630,6 +639,7 @@ const allUiRoutes = [
 	...tablesRoutes,
 	...iconsRoutes,
 	...widgetsRoutes,
+	...TransactionsRoutes
 ]
 const allAdminRoutes = [
 	...dashboardRoutes,

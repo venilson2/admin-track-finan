@@ -53,11 +53,11 @@ const Register = () => {
 			<Row className="form-group my-3">
 				<Col sm={12}>
 					<div className="custom-control custom-switch switch-success">
-						<input
+						{/* <input
 							type="checkbox"
 							className="custom-control-input"
 							id="customSwitchSuccess2"
-						/>
+						/> */}
 						<label
 							className="form-label text-muted"
 							htmlFor="customSwitchSuccess2"

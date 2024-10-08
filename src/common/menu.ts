@@ -658,13 +658,13 @@ export const VERTICAL_MENU_ITEMS: MenuItemType[] = [
 	},
 	{
 		key: 'widget',
-		label: 'Widgets',
-		badge: {
-			text: 'New',
-			variant: 'soft-success',
-		},
+		label: 'Transações',
+		// badge: {
+		// 	text: 'New',
+		// 	variant: 'soft-success',
+		// },
 		isTitle: false,
-		url: '/widgets',
+		url: '/transactions',
 		icon: FiLayers,
 	},
 	{
