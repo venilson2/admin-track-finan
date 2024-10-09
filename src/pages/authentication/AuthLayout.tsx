@@ -9,7 +9,7 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
 				<Row className="vh-100 d-flex justify-content-center">
 					<Col xs={12} className="align-self-center">
 						<Row className="row">
-							<Col lg={5} className="mx-auto">
+							<Col>
 								<Suspense fallback={<Preloader />}>{children}</Suspense>
 							</Col>
 						</Row>

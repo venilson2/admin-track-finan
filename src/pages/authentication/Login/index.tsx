@@ -1,7 +1,6 @@
 import {
 	Button,
 	Card,
-	CardBody,
 	Col,
 	Image,
 	Nav,
@@ -11,147 +10,110 @@ import {
 	TabContainer,
 	TabContent,
 	TabPane,
-} from 'react-bootstrap'
-import { Link, Navigate } from 'react-router-dom'
-import logoDark from '@/assets/images/logo-sm-dark.png'
-import { FormInputPassword, FormTextInput, PageMetaData } from '@/components'
-import useLogin from './useLogin'
-import AuthLayout from '../AuthLayout'
-import Register from '../Register'
+	Form,
+} from 'react-bootstrap';
+import { Link, Navigate } from 'react-router-dom';
+import logoDark from '@/assets/images/logo-sm-dark.png';
+import { FormInputPassword, FormTextInput, PageMetaData } from '@/components';
+import useLogin from './useLogin';
+import AuthLayout from '../AuthLayout';
+import Register from '../Register';
+import { useState } from 'react';
 
 const Login = () => {
-	const { loading, control, login, redirectUrl, isAuthenticated } = useLogin()
+	const { loading, control, login, redirectUrl, isAuthenticated } = useLogin();
+	const [activeKey, setActiveKey] = useState("1");
 
 	return (
 		<>
 			<PageMetaData title="Login" />
 			{isAuthenticated && <Navigate to={redirectUrl} replace />}
 			<AuthLayout>
-				<Card>
-					<CardBody className="p-0 auth-header-box">
-						<div className="text-center p-3">
-							<Link to="/" className="logo logo-admin">
-								<Image
-									src={logoDark}
-									height="50"
-									alt="logo"
-									className="auth-logo"
-								/>
-							</Link>
-							<h4 className="mt-3 mb-1 fw-semibold text-white font-18">
-								Let's Get Started Dastone
-							</h4>
-							<p className="text-muted  mb-0">
-								Sign in to continue to Dastone.
-							</p>
-						</div>
-					</CardBody>
-					<CardBody className="p-0">
-						<TabContainer defaultActiveKey="1">
-							<Nav className="nav-border nav-pills" role="tablist">
-								<NavItem>
-									<NavLink eventKey="1">Entrar</NavLink>
-								</NavItem>
-								<NavItem>
-									<NavLink eventKey="2">Cadastrar</NavLink>
-								</NavItem>
-							</Nav>
-
-							<TabContent>
-								<TabPane
-									eventKey="1"
-									className="p-3"
-									id="LogIn_Tab"
-									role="tabpanel"
-								>
-									<form className="form-horizontal auth-form" onSubmit={login}>
-										<FormTextInput
-											name="email"
-											label="Email"
-											containerClass="mb-2"
-											control={control}
-											placeholder="digite seu e-mail"
-										/>
-										<FormInputPassword
-											name="password"
-											label="Password"
-											control={control}
-											placeholder="digite sua senha"
-										/>
-
-										<Row className="form-group my-3">
-											<Col sm={6}>
-												<div className="custom-control custom-switch switch-success">
-													<input
-														type="checkbox"
-														className="custom-control-input"
-														id="customSwitchSuccess"
-													/>
-													<label
-														className="form-label text-muted"
-														htmlFor="customSwitchSuccess"
-													>
-														Mantenha-me conectado.
-													</label>
-												</div>
-											</Col>
-											<Col sm={6} className="text-end">
-												<Link
-													to="/auth-recover-pw"
-													className="text-muted font-13"
-												>
-													<i className="dripicons-lock"></i> Esqueceu sua senha?
+				<Row className="g-0 vh-100">
+					<Col md={6} className="d-flex flex-column justify-content-center align-items-center bg-light">
+						<Image src={logoDark} height="50" alt="logo" className="mb-3" />
+						<h4 className="mt-3 mb-1 fw-semibold text-dark">Let's Get Started Dastone</h4>
+						<p className="text-muted">Sign in to continue to Dastone.</p>
+					</Col>
+					<Col md={6} className="d-flex justify-content-center align-items-center">
+						<Card.Body style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+							<TabContainer defaultActiveKey="1">
+								<Nav variant="pills" className="justify-content-center mb-4" style={{ height: '50px' }}>
+									<NavItem>
+										<NavLink 
+											eventKey="1" 
+											className={`fs-5 fw-bold rounded-pill px-4 py-2 ${activeKey === "1" ? "bg-primary text-white" : "text-primary"}`} 
+											style={{ transition: 'background-color 0.3s' }}
+											onClick={() => setActiveKey("1")}
+										>
+											ENTRAR
+										</NavLink>
+									</NavItem>
+									<NavItem>
+										<NavLink 
+											eventKey="2" 
+											className={`fs-5 fw-bold rounded-pill px-4 py-2 ${activeKey === "2" ? "bg-primary text-white" : "text-primary"}`} 
+											style={{ transition: 'background-color 0.3s' }}
+											onClick={() => setActiveKey("2")}
+										>
+											CADASTRAR
+										</NavLink>
+									</NavItem>
+								</Nav>
+								<TabContent className="mt-4" style={{ minHeight: '400px' }}> {/* Altura mínima para o conteúdo do TabPane */}
+									<TabPane eventKey="1">
+										<Form onSubmit={login} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+											<Form.Group className="mb-4">
+												<FormTextInput
+													name="email"
+													label="seu e-mail"
+													control={control}
+													placeholder="digite seu e-mail"
+													style={{ fontSize: '1.1rem', padding: '10px' }}
+												/>
+											</Form.Group>
+											<Form.Group className="mb-4">
+												<FormInputPassword
+													name="password"
+													label="senha"
+													control={control}
+													placeholder="digite sua senha"
+													style={{ fontSize: '1.1rem', padding: '10px' }}
+												/>
+											</Form.Group>
+											<Row className="align-items-center">
+												<Link to="/auth-recover-pw" className="text-muted fs-4 text-center">
+													Esqueceu sua senha?
 												</Link>
-											</Col>
-										</Row>
-
-										<div className="form-group mb-0 row">
-											<Col xs={12}>
+											</Row>
+											<div className="d-grid mt-4">
 												<Button
 													variant="primary"
-													className="w-100 waves-effect waves-light"
-													disabled={loading}
 													type="submit"
+													disabled={loading}
+													style={{
+														borderRadius: '25px',
+														fontSize: '1.1rem',
+														padding: '10px 20px'
+													}}
 												>
-													Entrar
-													<i className="fas fa-sign-in-alt ms-1"></i>
+													Entrar <i className="fas fa-sign-in-alt ms-1"></i>
 												</Button>
-											</Col>
-										</div>
-									</form>
-									{/* <div className="account-social">
-										<h6 className="mb-3">Or Login With</h6>
-									</div> */}
-									{/* <div className="btn-group w-100">
-										<Button variant="outline-secondary" size="sm">
-											Facebook
-										</Button>
-										<Button variant="outline-secondary" size="sm">
-											Google
-										</Button>
-									</div> */}
-								</TabPane>
+											</div>
+										</Form>
+									</TabPane>
 
-								<TabPane
-									eventKey="2"
-									className="px-3 pt-3"
-									id="Register_Tab"
-									role="tabpanel"
-								>
-									<Register />
-								</TabPane>
-							</TabContent>
-						</TabContainer>
-					</CardBody>
-					<CardBody className="bg-light-alt text-center">
-						<span className="text-muted d-none d-sm-inline-block">
-							Mannatthemes © <script>{new Date().getFullYear()}</script>
-						</span>
-					</CardBody>
-				</Card>
+									<TabPane eventKey="2">
+										<Register />
+									</TabPane>
+								</TabContent>
+							</TabContainer>
+						</Card.Body>
+					</Col>
+				</Row>
 			</AuthLayout>
 		</>
-	)
-}
+	);
+};
 
-export default Login
+export default Login;

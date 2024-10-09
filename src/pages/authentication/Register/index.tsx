@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Link, useNavigate } from 'react-router-dom'
 import { FormInputPassword, FormTextInput } from '@/components'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Button, Col, Row, Form } from 'react-bootstrap'
 
 const Register = () => {
 	const schemaResolver = yup.object().shape({
@@ -28,42 +28,50 @@ const Register = () => {
 			className="form-horizontal auth-form"
 			onSubmit={handleSubmit(() => navigate('/auth/login'))}
 		>
-			<FormTextInput
-				name="email"
-				label="E-mail"
-				containerClass="mb-2"
-				control={control}
-				placeholder="digite seu e-mail"
-			/>
-			<FormInputPassword
-				name="password"
-				label="Password"
-				control={control}
-				containerClass="mb-2"
-				placeholder="digite sua senha"
-			/>
-			<FormInputPassword
-				name="confirmPassword"
-				label="Confirme sua senha"
-				control={control}
-				containerClass="mb-2"
-				placeholder="confirme sua senha"
-			/>
+			<Form.Group className="mb-4">
+				<FormTextInput
+					name="email"
+					label="seu e-mail"
+					control={control}
+					placeholder="digite seu e-mail"
+					style={{ fontSize: '1.1rem', padding: '10px' }}
+				/>
+			</Form.Group>
+			<Form.Group className="mb-4">
+				<FormInputPassword
+					name="password"
+					label="senha"
+					control={control}
+					placeholder="digite sua senha"
+					style={{ fontSize: '1.1rem', padding: '10px' }}
+				/>
+			</Form.Group>
+			<Form.Group className="mb-4">
+				<FormInputPassword
+					name="confirmPassword"
+					label="Confirme sua senha"
+					control={control}
+					placeholder="confirme sua senha"
+					style={{ fontSize: '1.1rem', padding: '10px' }}
+				/>
+			</Form.Group>
 
 			<Row className="form-group my-3">
-				<Col sm={12}>
-					<div className="custom-control custom-switch switch-success">
-						{/* <input
+				<Col sm={12} className="d-flex align-items-center mb-3">
+					<div className="custom-control custom-switch me-2" style={{ display: 'flex', alignItems: 'center' }}>
+						<input
 							type="checkbox"
 							className="custom-control-input"
 							id="customSwitchSuccess2"
-						/> */}
+							style={{ width: '20px', height: '20px' }}
+						/>
 						<label
-							className="form-label text-muted"
+							className="custom-control-label text-muted"
 							htmlFor="customSwitchSuccess2"
+							style={{ fontSize: '0.9rem', marginLeft: '10px' }}
 						>
 							Ao continuar, estou de acordo com os{' '}
-							<Link to="#" className="text-primary">
+							<Link to="#" className="text-primary fw-bold">
 								Termos de uso
 							</Link>
 						</label>
@@ -71,17 +79,19 @@ const Register = () => {
 				</Col>
 			</Row>
 
-			<Row className="form-group mb-0">
-				<Col xs={12}>
-					<Button
-						variant="primary"
-						type="submit"
-						className="w-100 waves-effect waves-light"
+			<div className="d-grid mt-4">
+				<Button
+					variant="primary"
+					type="submit"
+					style={{
+						borderRadius: '25px',
+						fontSize: '1.1rem',
+						padding: '10px 20px'
+					}}
 					>
-						Cadastrar <i className="fas fa-sign-in-alt ms-1"></i>
-					</Button>
-				</Col>
-			</Row>
+					Cadastrar <i className="fas fa-sign-in-alt ms-1"></i>
+				</Button>
+			</div>
 		</form>
 	)
 }
