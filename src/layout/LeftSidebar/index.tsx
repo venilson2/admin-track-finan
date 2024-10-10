@@ -32,7 +32,7 @@ const LeftSidebar = () => {
 				</Link>
 			</div>
 
-			<SimpleBar className="menu-content h-100">
+			<SimpleBar className="">
 				<AppMenu menuItems={getMenuItems()} />
 
 				<div className="update-msg text-center">
