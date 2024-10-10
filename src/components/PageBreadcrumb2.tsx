@@ -41,7 +41,7 @@ const PageBreadcrumb2 = ({ title, appName, subtitle }: PageTitleProps) => {
 									</span>
 									<FiChevronDown className="icon-xs ms-1" />
 								</Link>
-								</div>
+							</div>
 						</Row>
 					</div>
 				</Col>

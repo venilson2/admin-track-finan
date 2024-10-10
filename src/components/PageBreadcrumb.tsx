@@ -14,7 +14,7 @@ const PageBreadcrumb = ({ title, subName }: PageTitleProps) => {
 					<div className="page-title-box">
 						<Row>
 							<Col>
-								<h2 className="">{title}</h2>
+								<h3 className="">{title}</h3>
 								<ol className="breadcrumb">
 									<li className="breadcrumb-item active">{subName}</li>
 								</ol>
