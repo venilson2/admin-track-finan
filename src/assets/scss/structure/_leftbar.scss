@@ -67,20 +67,69 @@ File: Leftbar
     }
 }
 
+.left-sidenav {
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
+    background-color: $sidebar-light-bg;
+    min-height: 100vh;
+    transition: .3s;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    border-right: 1px solid $border;
+    z-index: 1001;
+    .brand {
+        text-align: center;
+        height: $header-height;
+        .logo {
+            line-height: $header-height;
+            .logo-sm {
+                height: 22px;
+            }
+            .logo-lg {
+                height: 14px;
+                margin-left: 2px;
+                display: $logo-dark;
+                &.logo-light{
+                  display: $logo-light;
+              }
+            }
+        }
+    }
+    hr.hr-dashed.hr-menu{
+        border-color: $sidebar-hr;
+    }
+
+    .menu-content{
+        height: 100%;
+        padding-bottom: 70px;
+    }
+}
+.page-wrapper {
+    flex: 1;
+    padding: 0;
+    display: block;
+    margin-left: $sidebar-width;
+    .page-content {
+        width: 100%;
+        position: relative;
+        min-height: calc(100vh - #{$header-height} - 2px);
+        padding: 0 8px 52px 8px;
+        display: inline-block;
+    }
+}
+
 .left-sidenav-menu {
     padding-left: 0;
     margin-bottom: 0;
-    padding: 0 24px;
-
+    padding: 16px;
     .menu-label {
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 10px;
         font-weight: 400;
         letter-spacing: .5px;
         color: $sidebar-label-color;
         padding: 8px 0;
-        // Melhora a legibilidade com um maior espaçamento
-        margin-top: 10px;
     }
 
     li {
@@ -88,76 +137,66 @@ File: Leftbar
         display: block;
         width: 100%;
         margin-top: 6px;
-
-        >a {
+        > a {
             display: flex;
             align-items: center;
-            padding: 12px 0px;
-            font-size: 16px;
+            padding: 4px 0px;
             color: $sidebar-item-color;
             transition: all 0.3s ease-out;
             font-weight: 400;
-
-            .menu-icon {
+            .menu-icon{
                 width: 18px;
                 height: 18px;
                 color: $sidebar-icon-color;
-                fill: rgba($sidebar-icon-color, 0.12);
-                margin-right: 10px; // Espaçamento melhorado
+                fill: rgba($sidebar-icon-color,0.12);
+                margin-right: 6px;
+                stroke-width: 1px;
             }
-
-            &.active {
-                .menu-icon {
+            &.active{
+                .menu-icon{
                     color: $primary;
-                    fill: rgba($primary, 0.12);
+                    fill: rgba($primary,0.12);
                 }
             }
 
             &:hover {
                 color: $sidebar-sub-item-hover-color;
-
-                i {
+                i{
                     color: $sidebar-icon-hover-color;
                 }
             }
-
-            // Ícone de seta indicando submenus
             i {
                 width: 25px;
                 display: inline-block;
                 font-size: 16px;
                 opacity: 0.9;
                 color: $sidebar-icon-color;
-
-                &.ti-control-record {
+                &.ti-control-record{
                     font-size: 8px;
                     vertical-align: middle;
                     margin-right: 0;
                 }
             }
-
-            span {
-                i {
+            span{
+                i{
                     color: $sidebar-arrow-color;
                 }
             }
         }
 
-        // Estilização dos submenus
         ul {
             padding: 0 0 0 25px;
-            margin-top: 6px; // Espaçamento visual
 
             li {
-                >a {
-                    padding: 8px 0; // Ajuste no espaçamento
+                > a {
+                    padding: 4px 0;
                     color: $sidebar-item-color;
-                    font-size: 15px; // Tamanho de fonte menor para submenus
+                    font-size: 13px;
+                    border-left: none;
 
                     &:hover {
                         color: $sidebar-sub-item-hover-color;
-
-                        i {
+                        i{
                             color: $primary;
                         }
                     }
@@ -166,61 +205,98 @@ File: Leftbar
         }
 
         &.mm-active {
-            .menu-arrow {
+            .menu-arrow{
                 i {
                     &:before {
                         content: "\F140";
                     }
                 }
             }
-
-            // Alterar o comportamento de submenus ativos
-            >a {
-                color: $sidebar-item-active-color;
-                background-color: $sidebar-light-bg;
-                border-radius: 6px; // Borda arredondada para melhorar a UI
-
+            .mm-active a .menu-arrow.left-has-menu{
                 i {
-                    color: $sidebar-item-active-color;
+                    &:before {
+                        content: "\F140";
+                    }
+                }
+            }
+            .menu-arrow.left-has-menu{
+                i {
+                    &:before {
+                        content: "\F142";
+                    }
+                }
+            }
+            li a{
+                menu-arrow.left-has-menu {
+                    i {
+                        &:before {
+                            content: "\F142";
+                        }
+                    }
                 }
             }
 
-            .nav-item.active {
-                a.nav-link.active {
-                    background-color: transparent;
-                    color: $primary;
+            .mm-active{
+                >a{
+                    color: $sidebar-sub-item-active-color;
+                    background: $sidebar-light-bg;
+                    &.active{
+                        color: $sidebar-item-active-color;
+                        background-color: transparent;
+                    }
+                    i{
+                        color: $sidebar-item-active-color;
+                    }
+                }
+                .menu-arrow.left-has-menu i:before{
+                    content: "\F140";
+                }
+                .mm-show{
+                    li{
+                        a.active{
+                            color: $sidebar-sub-item-active-color;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
 
-                    i {
+            > a  {
+                color: $sidebar-item-active-color;
+                border-radius: 4px;
+                i{
+                    color: $sidebar-item-active-color;
+                }
+            }
+            .nav-item.active{
+                a.nav-link.active{
+                    background-color:transparent;
+                    color: $primary;
+                    i{
                         color: $sidebar-item-hover-color;
                     }
                 }
             }
+
         }
     }
 
     .menu-arrow {
         margin-left: auto;
-
         i {
             width: 15px;
         }
     }
 }
-
-@media (max-width: 768px) {
-    .left-sidenav-menu {
-        padding: 0 16px; // Reduzir o padding em dispositivos móveis
-
-        li {
-            >a {
-                padding: 10px 0;
-                font-size: 14px; // Fonte menor em dispositivos menores
-            }
-
-            ul {
-                padding-left: 20px;
-            }
+@media (max-width: 1316.98px) {
+    .left-sidenav{
+        margin-top: $header-height;
+        .brand{
+            display: none;
         }
+    }
+    .page-wrapper{
+        margin: 0;
     }
 }
 
