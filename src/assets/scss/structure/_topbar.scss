@@ -11,42 +11,95 @@ File: Topbar
  z-index: 1001;
 }
 
+// .navbar-custom {
+//   min-height: $header-height;
+//   position: relative;
+//   border-bottom: 1px solid $border;
+//   .nav-link {
+//       padding: 0 0.75rem;
+//       color: $header-item-color;
+//       line-height: $header-height;
+//       max-height: $header-height;
+//       .nav-icon {
+//           font-size: 18px;
+//       }
+//   }
+//   .dropdown-toggle {
+//       &:after {
+//           content: initial;
+//       }
+//   }
+//   .topbar-nav {
+//     height: $header-height;
+//       li {
+//           float: left;
+//           &.show {
+//               .nav-link {
+//                   background-color: lighten($header-light-bg, 3%);
+//                   color: $body-color;
+//               }
+//           }
+//          .topbar-icon{
+//            height: 20px;
+//            width: 20px;
+//          }
+//       }
+//   }
+// }
 .navbar-custom {
-  background: $header-light-bg;
-  min-height: $header-height;
-  position: relative;
-  border-bottom: 1px solid $border;
-  .nav-link {
+    position: relative;
+    border-bottom: 1px solid $border;
+    
+    .nav-link {
       padding: 0 0.75rem;
       color: $header-item-color;
       line-height: $header-height;
       max-height: $header-height;
+  
       .nav-icon {
-          font-size: 18px;
+        font-size: 18px;
       }
-  }
-  .dropdown-toggle {
+    }
+  
+    .dropdown-toggle {
       &:after {
-          content: initial;
+        content: initial;
       }
-  }
-  .topbar-nav {
-    height: $header-height;
+    }
+  
+    .topbar-nav {
+      height: $header-height;
+  
       li {
-          float: left;
-          &.show {
-              .nav-link {
-                  background-color: lighten($header-light-bg, 3%);
-                  color: $body-color;
-              }
+        float: left;
+  
+        &.show {
+          .nav-link {
+            background-color: lighten($header-light-bg, 3%);
+            color: $body-color;
           }
-         .topbar-icon{
-           height: 20px;
-           width: 20px;
-         }
+        }
+  
+        .topbar-icon {
+          height: 20px;
+          width: 20px;
+        }
       }
+    }
+  
+    // .creat-btn {
+    //   .btn {
+    //     background-color: $header-title;
+    //     color: #fff; 
+    //     transition: background-color 0.3s ease; 
+        
+    //     &:hover {
+    //       background-color: darken($header-title, 10%); 
+    //       color: #fff; 
+    //     }
+    //   }
+    // }
   }
-}
 
 .button-menu-mobile {
   border: none;

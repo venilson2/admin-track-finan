@@ -19,27 +19,27 @@ const TopNavbar = () => {
 		<>
 			<div className="topbar">
 				<nav className="navbar-custom">
-					{/* <ul className="list-unstyled topbar-nav float-end mb-0">
-						<SearchBar />
-						<Notifications notifications={notifications} />
-						<ProfileDropdown />
-					</ul> */}
+					<ul className="list-unstyled topbar-nav float-end mb-0">
+					<SearchBar />
+					<Notifications notifications={notifications} />
+					<ProfileDropdown />
+					</ul>
 					<ul className="list-unstyled topbar-nav mb-0">
-						<li>
-							<button
-								className="nav-link button-menu-mobile"
-								onClick={handleLeftMenuCallBack}
-							>
-								<FiMenu className="align-self-center topbar-icon" />
-							</button>
-						</li>
-						<li className="creat-btn">
-							<NavLink>
-								<Button variant="soft-primary" size="sm" role="button">
-									<i className="fas fa-plus me-2"></i>New Task
-								</Button>
-							</NavLink>
-						</li>
+					<li>
+						<button
+						className="nav-link button-menu-mobile"
+						onClick={handleLeftMenuCallBack}
+						>
+						<FiMenu className="align-self-center topbar-icon" />
+						</button>
+					</li>
+					<li className="creat-btn">
+						<NavLink>
+						<Button variant="soft-primary" size="sm" role="button" className="rounded-pill py-2 px-3">
+							<i className="fas fa-plus me-2"></i>Novo
+						</Button>
+						</NavLink>
+					</li>
 					</ul>
 				</nav>
 			</div>

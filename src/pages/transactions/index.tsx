@@ -2,7 +2,7 @@ import { PageBreadcrumb } from '@/components'
 const Transactions = () => {
 	return (
 		<>
-			<PageBreadcrumb title="Transações" subName='' />
+			<PageBreadcrumb title="Transações" />
 		</>
 	)
 }

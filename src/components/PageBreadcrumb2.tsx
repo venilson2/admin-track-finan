@@ -2,14 +2,15 @@ import { Col, Row } from 'react-bootstrap'
 import { PageMetaData } from './index'
 import { Link } from 'react-router-dom'
 
-import { FiCalendar, FiDownload } from 'react-icons/fi'
+import { FiChevronDown } from 'react-icons/fi'
 
 interface PageTitleProps {
-	appName: string
+	appName?: string | null
+	subtitle?: string | null
 	title: string
 }
 
-const PageBreadcrumb2 = ({ title, appName }: PageTitleProps) => {
+const PageBreadcrumb2 = ({ title, appName, subtitle }: PageTitleProps) => {
 	return (
 		<>
 			<PageMetaData title={title} />
@@ -18,36 +19,29 @@ const PageBreadcrumb2 = ({ title, appName }: PageTitleProps) => {
 					<div className="page-title-box">
 						<Row>
 							<Col>
-								<h4 className="page-title">{title}</h4>
+								<h3 className="">{title}</h3>
 								<ol className="breadcrumb">
-									<li className="breadcrumb-item">
-										<Link to="#">Dastone</Link>
-									</li>
-									<li className="breadcrumb-item">
-										<Link to="#">{appName}</Link>
-									</li>
-									<li className="breadcrumb-item active">{title}</li>
+									{appName && (
+										<li className="breadcrumb-item">
+											<Link to="#">{appName}</Link>
+										</li>
+									)}
+									<li className="breadcrumb-item active">{subtitle}</li>
 								</ol>
 							</Col>
-							<div className="col-auto align-self-center d-flex gap-1">
+							<div className="col-auto align-self-center d-flex gap-2">
 								<Link
 									to="#"
-									className="btn btn-sm btn-outline-primary"
-									id="Dash_Date"
+									className="btn btn-lg btn-outline-primary rounded-pill d-flex align-items-center py-2 px-3"
+									id="Dash_Month"
+									style={{ fontWeight: 'bold' }}
 								>
-									<span className="ay-name" id="Day_Name">
-										Today:
+									<span className="month-name" id="Month_Name">
+									{new Date().toLocaleString('default', { month: 'long' })} {/* Mês atual */}
 									</span>
-									&nbsp;
-									<span className="" id="Select_date">
-										Jan 11
-									</span>
-									<FiCalendar className="align-self-center icon-xs ms-1" />
+									<FiChevronDown className="icon-xs ms-1" />
 								</Link>
-								<Link to="#" className="btn btn-sm btn-outline-primary">
-									<FiDownload className="align-self-center icon-xs" />
-								</Link>
-							</div>
+								</div>
 						</Row>
 					</div>
 				</Col>

@@ -1,7 +1,7 @@
 import { Col, Row } from 'react-bootstrap'
 import { PageMetaData } from '.'
 interface PageTitleProps {
-	subName: string
+	subName?: string
 	title: string
 }
 
@@ -14,7 +14,7 @@ const PageBreadcrumb = ({ title, subName }: PageTitleProps) => {
 					<div className="page-title-box">
 						<Row>
 							<Col>
-								<h4 className="page-title">{title}</h4>
+								<h2 className="">{title}</h2>
 								<ol className="breadcrumb">
 									<li className="breadcrumb-item active">{subName}</li>
 								</ol>
