@@ -1,0 +1,33 @@
+.nav-link {
+    padding: 15px 20px; 
+    transition: background-color 0.3s ease;
+}
+
+.nav-second-level {
+    padding-left: 20px; 
+}
+
+.mm-active .nav-link {
+    font-weight: bold;
+}
+
+.badge {
+    margin-left: auto;
+}
+
+.menu-icon {
+    margin-right: 10px; 
+}
+
+.collapse {
+    transition: max-height 0.5s ease;
+}
+  
+.menu-arrow {
+    margin-left: auto; 
+}
+
+.menu-label {
+    font-size: 1.1rem; 
+}
+  
