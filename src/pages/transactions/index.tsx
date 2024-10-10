@@ -9,37 +9,45 @@ import account1 from '@/assets/images/widgets/project1.jpg';
 import account2 from '@/assets/images/widgets/project1.jpg';
 import account3 from '@/assets/images/widgets/project1.jpg';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { AiOutlineSortDescending } from 'react-icons/ai';
 
 const Transactions = () => {
-    const transactions = [
+    
+	const transactions = [
         {
             date: '2024-10-01',
             description: 'Pagamento de serviços de consultoria e assessoria para o projeto X',
             category: 'Serviços',
             account: 'Conta Corrente',
-            value: '$500',
+            value: 500,
+            tags: ['consultoria', 'projeto X'],
+            observation: 'Pagamento realizado com sucesso.',
         },
         {
             date: '2024-10-05',
             description: 'Compra de materiais para o projeto Y',
             category: 'Materiais',
             account: 'Conta Corrente',
-            value: '$300',
+            value: -300,
+            tags: ['materiais', 'projeto Y'],
+            observation: 'Compra urgente.',
         },
         {
             date: '2024-10-10',
             description: 'Pagamento de fornecedores para o projeto Z',
             category: 'Fornecedores',
             account: 'Conta Poupança',
-            value: '$150',
+            value: 150,
+            tags: ['fornecedores', 'projeto Z'],
+            observation: 'Pagamento parcial.',
         },
         {
             date: '2024-10-15',
             description: 'Serviços de marketing digital para o projeto A',
             category: 'Marketing',
             account: 'Conta Corrente',
-            value: '$200',
+            value: -200,
+            tags: ['marketing', 'projeto A'],
+            observation: 'Serviço cancelado.',
         },
     ];
 
@@ -55,6 +63,19 @@ const Transactions = () => {
         'Conta Poupança': account2,
         'Conta de Investimento': account3,
     };
+
+	const formatCurrency = (value: number) => {
+        return `R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    };
+
+	
+	const formatDate = (dateString: string) => {
+		return new Date(dateString).toLocaleDateString('pt-BR', {
+			day: 'numeric', 
+			month: 'numeric', 
+			year: 'numeric'
+		});
+	};
 
     return (
         <>
@@ -101,7 +122,7 @@ const Transactions = () => {
                                     <tbody>
                                         {transactions.map((transaction, index) => (
                                             <tr key={index}>
-                                                <td>{transaction.date}</td>
+                                                <td>{formatDate(transaction.date)}</td>
                                                 <td>
                                                     <span
                                                         data-bs-toggle="tooltip"
@@ -129,7 +150,7 @@ const Transactions = () => {
                                                             alt={transaction.account}
                                                             style={{ width: '30px', height: '30px', borderRadius: '50%', marginRight: '10px' }}
                                                         />
-                                                        {transaction.account}
+                                                         {formatCurrency(transaction.value)}
                                                     </div>
                                                 </td>
                                                 <td>{transaction.value}</td>
