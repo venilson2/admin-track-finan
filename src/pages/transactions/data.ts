@@ -141,183 +141,426 @@ const OpportunitiesData: OpportunitiesType[] = [
 
 const transactions = [
 	{
-	  "date": "2024-10-01",
-	  "end_of_day_balance": 1500.00,
-	  "transactions": [
+	  date: "2024-10-01",
+	  end_of_day_balance: 1500.00,
+	  transactions: [
 		{
-		  "description": "Pagamento de serviços de consultoria e assessoria para o projeto X",
-		  "balance_after": 1000.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 1, "name": "Serviços" },
-		  "created_at": "2024-10-01T10:00:00Z",
-		  "updated_at": "2024-10-01T10:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-01T10:00:00Z",
-		  "transfer_type": "Receita",
-		  "transaction_amount": 500.00,
-		  "fit_id": "ABC123",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Pagamento de serviços de consultoria e assessoria para o projeto X",
+		  balance_after: 1000.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 1, name: "Serviços" },
+		  created_at: "2024-10-01T10:00:00Z",
+		  updated_at: "2024-10-01T10:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-01T10:00:00Z",
+		  transfer_type: "Receita",
+		  transaction_amount: 500.00,
+		  fit_id: "ABC123",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		},
 		{
-		  "description": "Recebimento de doação para o projeto Y",
-		  "balance_after": 1500.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 2, "name": "Doações" },
-		  "created_at": "2024-10-01T12:00:00Z",
-		  "updated_at": "2024-10-01T12:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-01T12:00:00Z",
-		  "transfer_type": "Receita",
-		  "transaction_amount": 1000.00,
-		  "fit_id": "DEF456",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Recebimento de doação para o projeto Y",
+		  balance_after: 1500.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 2, name: "Doações" },
+		  created_at: "2024-10-01T12:00:00Z",
+		  updated_at: "2024-10-01T12:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-01T12:00:00Z",
+		  transfer_type: "Receita",
+		  transaction_amount: 1000.00,
+		  fit_id: "DEF456",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		}
 	  ]
 	},
 	{
-	  "date": "2024-10-02",
-	  "end_of_day_balance": 2200.00,
-	  "transactions": [
+	  date: "2024-10-02",
+	  end_of_day_balance: 2200.00,
+	  transactions: [
 		{
-		  "description": "Venda de produtos do projeto B",
-		  "balance_after": 2200.00,
-		  "user": { "id": 2, "name": "Maria" },
-		  "category": { "id": 3, "name": "Vendas" },
-		  "created_at": "2024-10-02T10:00:00Z",
-		  "updated_at": "2024-10-02T10:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-02T10:00:00Z",
-		  "transfer_type": "Receita",
-		  "transaction_amount": 1200.00,
-		  "fit_id": "GHI789",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Venda de produtos do projeto B",
+		  balance_after: 2200.00,
+		  user: { id: 2, name: "Maria" },
+		  category: { id: 3, name: "Vendas" },
+		  created_at: "2024-10-02T10:00:00Z",
+		  updated_at: "2024-10-02T10:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-02T10:00:00Z",
+		  transfer_type: "Receita",
+		  transaction_amount: 1200.00,
+		  fit_id: "GHI789",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		}
 	  ]
 	},
 	{
-	  "date": "2024-10-03",
-	  "end_of_day_balance": 200.00,
-	  "transactions": [
+	  date: "2024-10-03",
+	  end_of_day_balance: 200.00,
+	  transactions: [
 		{
-		  "description": "Pagamento de aluguel do escritório",
-		  "balance_after": 700.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 4, "name": "Despesas" },
-		  "created_at": "2024-10-03T09:00:00Z",
-		  "updated_at": "2024-10-03T09:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": true,
-		  "recurring_months": 12,
-		  "diposted_date": "2024-10-03T09:00:00Z",
-		  "transfer_type": "Despesa",
-		  "transaction_amount": -1500.00,
-		  "fit_id": "JKL012",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Pagamento de aluguel do escritório",
+		  balance_after: 700.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 4, name: "Despesas" },
+		  created_at: "2024-10-03T09:00:00Z",
+		  updated_at: "2024-10-03T09:00:00Z",
+		  deleted_at: null,
+		  is_recurring: true,
+		  recurring_months: 12,
+		  diposted_date: "2024-10-03T09:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -1500.00,
+		  fit_id: "JKL012",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		},
 		{
-		  "description": "Compra de materiais de escritório",
-		  "balance_after": 400.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 5, "name": "Materiais" },
-		  "created_at": "2024-10-03T11:00:00Z",
-		  "updated_at": "2024-10-03T11:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-03T11:00:00Z",
-		  "transfer_type": "Despesa",
-		  "transaction_amount": -300.00,
-		  "fit_id": "MNO345",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Compra de materiais de escritório",
+		  balance_after: 400.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 5, name: "Materiais" },
+		  created_at: "2024-10-03T11:00:00Z",
+		  updated_at: "2024-10-03T11:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-03T11:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -300.00,
+		  fit_id: "MNO345",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		},
 		{
-		  "description": "Serviços de limpeza do escritório",
-		  "balance_after": 200.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 4, "name": "Despesas" },
-		  "created_at": "2024-10-03T13:00:00Z",
-		  "updated_at": "2024-10-03T13:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": true,
-		  "recurring_months": 6,
-		  "diposted_date": "2024-10-03T13:00:00Z",
-		  "transfer_type": "Despesa",
-		  "transaction_amount": -200.00,
-		  "fit_id": "PQR678",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Serviços de limpeza do escritório",
+		  balance_after: 200.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 4, name: "Despesas" },
+		  created_at: "2024-10-03T13:00:00Z",
+		  updated_at: "2024-10-03T13:00:00Z",
+		  deleted_at: null,
+		  is_recurring: true,
+		  recurring_months: 6,
+		  diposted_date: "2024-10-03T13:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -200.00,
+		  fit_id: "PQR678",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		}
 	  ]
 	},
 	{
-	  "date": "2024-10-04",
-	  "end_of_day_balance": -400.00,
-	  "transactions": [
+	  date: "2024-10-04",
+	  end_of_day_balance: -400.00,
+	  transactions: [
 		{
-		  "description": "Compra de softwares para o projeto C",
-		  "balance_after": -400.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 6, "name": "Tecnologia" },
-		  "created_at": "2024-10-04T09:00:00Z",
-		  "updated_at": "2024-10-04T09:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-04T09:00:00Z",
-		  "transfer_type": "Despesa",
-		  "transaction_amount": -600.00,
-		  "fit_id": "STU901",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Compra de softwares para o projeto C",
+		  balance_after: -400.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 6, name: "Tecnologia" },
+		  created_at: "2024-10-04T09:00:00Z",
+		  updated_at: "2024-10-04T09:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-04T09:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -600.00,
+		  fit_id: "STU901",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		}
 	  ]
 	},
 	{
-	  "date": "2024-10-05",
-	  "end_of_day_balance": -450.00,
-	  "transactions": [
+	  date: "2024-10-05",
+	  end_of_day_balance: -450.00,
+	  transactions: [
 		{
-		  "description": "Compra de materiais para o projeto Y",
-		  "balance_after": -700.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 5, "name": "Materiais" },
-		  "created_at": "2024-10-05T09:00:00Z",
-		  "updated_at": "2024-10-05T09:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-05T09:00:00Z",
-		  "transfer_type": "Despesa",
-		  "transaction_amount": -300.00,
-		  "fit_id": "VWX234",
-		  "wallet": { "id": 1, "name": "Carteira Principal" }
+		  description: "Compra de materiais para o projeto Y",
+		  balance_after: -700.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 5, name: "Materiais" },
+		  created_at: "2024-10-05T09:00:00Z",
+		  updated_at: "2024-10-05T09:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-05T09:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -300.00,
+		  fit_id: "VWX234",
+		  wallet: { id: 1, name: "Carteira Principal" }
 		},
 		{
-		  "description": "Reembolso de despesas de viagem",
-		  "balance_after": -450.00,
-		  "user": { "id": 1, "name": "João" },
-		  "category": { "id": 7, "name": "Reembolsos" },
-		  "created_at": "2024-10-05T11:00:00Z",
-		  "updated_at": "2024-10-05T11:00:00Z",
-		  "deleted_at": null,
-		  "is_recurring": false,
-		  "recurring_months": null,
-		  "diposted_date": "2024-10-05T11:00:00Z",
-		  "transfer_type": "Receita",
-		  "transaction_amount": 250.00,
-		  "fit_id": "YZA567",
-		  "wallet": { "id": 1, "name": "Carteira" }
-		}]
-	}
-]
-  
-
-
-
+		  description: "Reembolso de despesas de viagem",
+		  balance_after: -450.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 7, name: "Reembolsos" },
+		  created_at: "2024-10-05T11:00:00Z",
+		  updated_at: "2024-10-05T11:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-05T11:00:00Z",
+		  transfer_type: "Receita",
+		  transaction_amount: 250.00,
+		  fit_id: "YZA567",
+		  wallet: { id: 1, name: "Carteira Principal" }
+		}
+	  ]
+	},
+	{
+	  date: "2024-10-06",
+	  end_of_day_balance: 500.00,
+	  transactions: [
+		{
+		  description: "Venda de equipamentos do projeto Z",
+		  balance_after: 1000.00,
+		  user: { id: 2, name: "Maria" },
+		  category: { id: 3, name: "Vendas" },
+		  created_at: "2024-10-06T09:00:00Z",
+		  updated_at: "2024-10-06T09:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-06T09:00:00Z",
+		  transfer_type: "Receita",
+		  transaction_amount: 500.00,
+		  fit_id: "ZXC789",
+		  wallet: { id: 1, name: "Carteira Principal" }
+		},
+		{
+		  description: "Manutenção de equipamentos do projeto A",
+		  balance_after: 500.00,
+		  user: { id: 1, name: "João" },
+		  category: { id: 6, name: "Tecnologia" },
+		  created_at: "2024-10-06T11:00:00Z",
+		  updated_at: "2024-10-06T11:00:00Z",
+		  deleted_at: null,
+		  is_recurring: false,
+		  recurring_months: null,
+		  diposted_date: "2024-10-06T11:00:00Z",
+		  transfer_type: "Despesa",
+		  transaction_amount: -500.00,
+		  fit_id: "QWE012",
+		  wallet: { id: 1, name: "Carteira Principal" }
+		}
+	  ]
+	},
+	{
+		date: "2024-10-07",
+		end_of_day_balance: 800.00,
+		transactions: [
+		  {
+			description: "Venda de camisetas do projeto D",
+			balance_after: 1300.00,
+			user: { id: 2, name: "Maria" },
+			category: { id: 3, name: "Vendas" },
+			created_at: "2024-10-07T10:00:00Z",
+			updated_at: "2024-10-07T10:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-07T10:00:00Z",
+			transfer_type: "Receita",
+			transaction_amount: 500.00,
+			fit_id: "ABC987",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  },
+		  {
+			description: "Compra de materiais de marketing",
+			balance_after: 800.00,
+			user: { id: 1, name: "João" },
+			category: { id: 8, name: "Marketing" },
+			created_at: "2024-10-07T12:00:00Z",
+			updated_at: "2024-10-07T12:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-07T12:00:00Z",
+			transfer_type: "Despesa",
+			transaction_amount: -500.00,
+			fit_id: "DEF654",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-08",
+		end_of_day_balance: 1200.00,
+		transactions: [
+		  {
+			description: "Recebimento de patrocínio para o projeto E",
+			balance_after: 1200.00,
+			user: { id: 2, name: "Maria" },
+			category: { id: 2, name: "Doações" },
+			created_at: "2024-10-08T09:00:00Z",
+			updated_at: "2024-10-08T09:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-08T09:00:00Z",
+			transfer_type: "Receita",
+			transaction_amount: 1200.00,
+			fit_id: "GHI321",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-09",
+		end_of_day_balance: 900.00,
+		transactions: [
+		  {
+			description: "Pagamento de serviços de internet",
+			balance_after: 900.00,
+			user: { id: 1, name: "João" },
+			category: { id: 4, name: "Despesas" },
+			created_at: "2024-10-09T10:00:00Z",
+			updated_at: "2024-10-09T10:00:00Z",
+			deleted_at: null,
+			is_recurring: true,
+			recurring_months: 12,
+			diposted_date: "2024-10-09T10:00:00Z",
+			transfer_type: "Despesa",
+			transaction_amount: -300.00,
+			fit_id: "JKL123",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  },
+		  {
+			description: "Compra de um novo computador",
+			balance_after: 900.00,
+			user: { id: 2, name: "Maria" },
+			category: { id: 6, name: "Tecnologia" },
+			created_at: "2024-10-09T12:00:00Z",
+			updated_at: "2024-10-09T12:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-09T12:00:00Z",
+			transfer_type: "Despesa",
+			transaction_amount: -1200.00,
+			fit_id: "MNO456",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-10",
+		end_of_day_balance: 700.00,
+		transactions: [
+		  {
+			description: "Venda de produtos digitais do projeto F",
+			balance_after: 700.00,
+			user: { id: 1, name: "João" },
+			category: { id: 3, name: "Vendas" },
+			created_at: "2024-10-10T09:00:00Z",
+			updated_at: "2024-10-10T09:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-10T09:00:00Z",
+			transfer_type: "Receita",
+			transaction_amount: 700.00,
+			fit_id: "PQR567",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-11",
+		end_of_day_balance: 600.00,
+		transactions: [
+		  {
+			description: "Pagamento de taxas de registro",
+			balance_after: 600.00,
+			user: { id: 2, name: "Maria" },
+			category: { id: 4, name: "Despesas" },
+			created_at: "2024-10-11T10:00:00Z",
+			updated_at: "2024-10-11T10:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-11T10:00:00Z",
+			transfer_type: "Despesa",
+			transaction_amount: -100.00,
+			fit_id: "STU678",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-12",
+		end_of_day_balance: 1500.00,
+		transactions: [
+		  {
+			description: "Recebimento de pagamento de cliente",
+			balance_after: 1500.00,
+			user: { id: 1, name: "João" },
+			category: { id: 2, name: "Doações" },
+			created_at: "2024-10-12T10:00:00Z",
+			updated_at: "2024-10-12T10:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-12T10:00:00Z",
+			transfer_type: "Receita",
+			transaction_amount: 1000.00,
+			fit_id: "YZA789",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-13",
+		end_of_day_balance: 1300.00,
+		transactions: [
+		  {
+			description: "Pagamento de serviços de contabilidade",
+			balance_after: 1300.00,
+			user: { id: 2, name: "Maria" },
+			category: { id: 4, name: "Despesas" },
+			created_at: "2024-10-13T09:00:00Z",
+			updated_at: "2024-10-13T09:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-13T09:00:00Z",
+			transfer_type: "Despesa",
+			transaction_amount: -200.00,
+			fit_id: "QWE123",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  },
+	  {
+		date: "2024-10-14",
+		end_of_day_balance: 1800.00,
+		transactions: [
+		  {
+			description: "Venda de adesivos do projeto G",
+			balance_after: 1800.00,
+			user: { id: 1, name: "João" },
+			category: { id: 3, name: "Vendas" },
+			created_at: "2024-10-14T10:00:00Z",
+			updated_at: "2024-10-14T10:00:00Z",
+			deleted_at: null,
+			is_recurring: false,
+			recurring_months: null,
+			diposted_date: "2024-10-14T10:00:00Z",
+			transfer_type: "Receita",
+			transaction_amount: 500.00,
+			fit_id: "RTY456",
+			wallet: { id: 1, name: "Carteira Principal" }
+		  }
+		]
+	  }
+  	]
 
 export {
 	transactions,
