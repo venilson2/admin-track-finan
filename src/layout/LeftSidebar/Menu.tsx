@@ -115,26 +115,27 @@ const MenuItem = ({ item, className, linkClassName }: SubMenus) => {
 const MenuItemLink = ({ item, className }: SubMenus) => {
 	const Icon = item.icon
 	return (
-		<Link
-			to={item.url!}
-			target={item.target}
-			className={`${className}`}
-			data-menu-key={item.key}
-		>
-			{Icon ? (
-				<Icon size={18} className="menu-icon align-self-center" />
-			) : (
-				<i className="ti-control-record" />
-			)}
-			{item.label}
-			{item.badge && (
-				<span className={`badge bg-${item.badge.variant} ms-auto`}>
-					{item.badge.text}
-				</span>
-			)}
-		</Link>
+	  <Link
+		to={item.url!}
+		target={item.target}
+		className={`${className}`}
+		data-menu-key={item.key}
+		aria-label={item.label} // Acessibilidade para leitores de tela
+	  >
+		{Icon ? (
+		  <Icon size={18} className="menu-icon align-self-center" />
+		) : (
+		  <i className="ti-control-record" />
+		)}
+		{item.label}
+		{item.badge && (
+		  <span className={`badge bg-${item.badge.variant} ms-auto`}>
+			{item.badge.text}
+		  </span>
+		)}
+	  </Link>
 	)
-}
+  }
 
 /**
  * Renders the application menu

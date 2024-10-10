@@ -17,40 +17,47 @@ File: Leftbar
     top: 0;
     border-right: 1px solid $border;
     z-index: 1001;
-    
+
     .brand {
         text-align: center;
         height: $header-height;
+
         .logo {
             line-height: $header-height;
+
             .logo-sm {
                 height: 22px;
             }
+
             .logo-lg {
                 height: 14px;
                 margin-left: 2px;
                 display: $logo-dark;
-                &.logo-light{
-                  display: $logo-light;
-              }
+
+                &.logo-light {
+                    display: $logo-light;
+                }
             }
         }
     }
-    hr.hr-dashed.hr-menu{
+
+    hr.hr-dashed.hr-menu {
         border-color: $sidebar-hr;
     }
 
-    .menu-content{
+    .menu-content {
         height: 100%;
         padding-bottom: 70px;
     }
 }
+
 .page-wrapper {
     flex: 1;
     padding: 0;
     display: block;
     margin-left: 0px;
     background-color: #EDF3FB;
+
     .page-content {
         width: 100%;
         position: relative;
@@ -64,6 +71,7 @@ File: Leftbar
     padding-left: 0;
     margin-bottom: 0;
     padding: 0 24px;
+
     .menu-label {
         text-transform: uppercase;
         font-size: 16px;
@@ -71,6 +79,8 @@ File: Leftbar
         letter-spacing: .5px;
         color: $sidebar-label-color;
         padding: 8px 0;
+        // Melhora a legibilidade com um maior espaçamento
+        margin-top: 10px;
     }
 
     li {
@@ -78,68 +88,76 @@ File: Leftbar
         display: block;
         width: 100%;
         margin-top: 6px;
-        > a {
+
+        >a {
             display: flex;
             align-items: center;
             padding: 12px 0px;
             font-size: 16px;
-            font-weight: 400;
             color: $sidebar-item-color;
             transition: all 0.3s ease-out;
             font-weight: 400;
-            .menu-icon{
+
+            .menu-icon {
                 width: 18px;
                 height: 18px;
                 color: $sidebar-icon-color;
-                fill: rgba($sidebar-icon-color,0.12);
-                margin-right: 6px;
-                stroke-width: 1px;
+                fill: rgba($sidebar-icon-color, 0.12);
+                margin-right: 10px; // Espaçamento melhorado
             }
-            &.active{
-                .menu-icon{
+
+            &.active {
+                .menu-icon {
                     color: $primary;
-                    fill: rgba($primary,0.12);
+                    fill: rgba($primary, 0.12);
                 }
             }
 
             &:hover {
                 color: $sidebar-sub-item-hover-color;
-                i{
+
+                i {
                     color: $sidebar-icon-hover-color;
                 }
             }
+
+            // Ícone de seta indicando submenus
             i {
                 width: 25px;
                 display: inline-block;
                 font-size: 16px;
                 opacity: 0.9;
                 color: $sidebar-icon-color;
-                &.ti-control-record{
+
+                &.ti-control-record {
                     font-size: 8px;
                     vertical-align: middle;
                     margin-right: 0;
                 }
             }
-            span{
-                i{
+
+            span {
+                i {
                     color: $sidebar-arrow-color;
                 }
             }
         }
 
+        // Estilização dos submenus
         ul {
             padding: 0 0 0 25px;
+            margin-top: 6px; // Espaçamento visual
 
             li {
-                > a {
-                    padding: 4px 0;
+                >a {
+                    padding: 8px 0; // Ajuste no espaçamento
                     color: $sidebar-item-color;
-                    font-size: 16px;
-                    border-left: none;
+                    font-size: 15px; // Tamanho de fonte menor para submenus
 
                     &:hover {
                         color: $sidebar-sub-item-hover-color;
-                        i{
+
+                        i {
                             color: $primary;
                         }
                     }
@@ -148,122 +166,91 @@ File: Leftbar
         }
 
         &.mm-active {
-            .menu-arrow{
+            .menu-arrow {
                 i {
                     &:before {
                         content: "\F140";
                     }
                 }
             }
-            .mm-active a .menu-arrow.left-has-menu{
-                i {
-                    &:before {
-                        content: "\F140";
-                    }
-                }
-            }
-            .menu-arrow.left-has-menu{
-                i {
-                    &:before {
-                        content: "\F142";
-                    }
-                }
-            }
-            li a{
-                menu-arrow.left-has-menu {
-                    i {
-                        &:before {
-                            content: "\F142";
-                        }
-                    }
-                }
-            }
 
-            .mm-active{
-                >a{
-                    color: $sidebar-sub-item-active-color;
-                    background: $sidebar-light-bg;
-                    &.active{
-                        color: $sidebar-item-active-color;
-                        background-color: transparent;
-                    }
-                    i{
-                        color: $sidebar-item-active-color;
-                    }
-                }
-                .menu-arrow.left-has-menu i:before{
-                    content: "\F140";
-                }
-                .mm-show{
-                    li{
-                        a.active{
-                            color: $sidebar-sub-item-active-color;
-                            font-weight: 500;
-                        }
-                    }
-                }
-            }
-
-            > a  {
+            // Alterar o comportamento de submenus ativos
+            >a {
                 color: $sidebar-item-active-color;
-                border-radius: 4px;
-                i{
+                background-color: $sidebar-light-bg;
+                border-radius: 6px; // Borda arredondada para melhorar a UI
+
+                i {
                     color: $sidebar-item-active-color;
                 }
             }
-            .nav-item.active{
-                a.nav-link.active{
-                    background-color:transparent;
+
+            .nav-item.active {
+                a.nav-link.active {
+                    background-color: transparent;
                     color: $primary;
-                    i{
+
+                    i {
                         color: $sidebar-item-hover-color;
                     }
                 }
             }
-
         }
     }
 
     .menu-arrow {
         margin-left: auto;
+
         i {
             width: 15px;
         }
     }
 }
-@media (max-width: 1316.98px) {
-    .left-sidenav{
-        margin-top: $header-height;
-        .brand{
-            display: none;
+
+@media (max-width: 768px) {
+    .left-sidenav-menu {
+        padding: 0 16px; // Reduzir o padding em dispositivos móveis
+
+        li {
+            >a {
+                padding: 10px 0;
+                font-size: 14px; // Fonte menor em dispositivos menores
+            }
+
+            ul {
+                padding-left: 20px;
+            }
         }
-    }
-    .page-wrapper{
-        margin: 0;
     }
 }
 
+
 @media (max-width: 1024px) {
-    body{
+    body {
         display: block !important;
     }
+
     .left-sidenav {
         overflow-y: auto;
         z-index: 10;
         bottom: 0;
         top: $header-height;
         margin-top: 0;
+
         .brand {
             display: none;
             width: $sidebar-width-collapsed;
+
             .logo-lg {
                 display: none !important;
             }
         }
     }
-    .page-wrapper{
+
+    .page-wrapper {
         margin: 0;
     }
+
     .page-content {
         min-height: 100vh;
         padding: 0 0 50px 0;
@@ -272,24 +259,27 @@ File: Leftbar
 
 // Enlarge menu
 .enlarge-menu {
-    .left-sidenav{
+    .left-sidenav {
         display: none;
+
         .brand {
             background-color: $sidebar-light-bg;
         }
     }
-    .page-wrapper{
+
+    .page-wrapper {
         margin: 0;
     }
 }
 
-.update-msg{
+.update-msg {
     border-radius: 5px;
     padding: 16px 10px;
     margin: 50px 16px 16px;
     position: relative;
-    background-color: rgba($gray-500,.06);
-    .img-box{
+    background-color: rgba($gray-500, .06);
+
+    .img-box {
         width: 46px;
         height: 46px;
         display: block;
@@ -303,17 +293,19 @@ File: Leftbar
         right: 0;
         left: 0;
     }
-    h5{
+
+    h5 {
         color: $gray-500;
     }
-    p{
+
+    p {
         color: $gray-500;
         font-weight: 400;
     }
 }
 
 @media (max-width: 330px) {
-    .creat-btn{
+    .creat-btn {
         display: none;
     }
 }
