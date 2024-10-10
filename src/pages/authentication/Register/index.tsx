@@ -43,6 +43,7 @@ const Register = () => {
 					label="senha"
 					control={control}
 					placeholder="digite sua senha"
+					//@ts-ignore
 					style={{ fontSize: '1.1rem', padding: '10px' }}
 				/>
 			</Form.Group>
@@ -52,6 +53,7 @@ const Register = () => {
 					label="Confirme sua senha"
 					control={control}
 					placeholder="confirme sua senha"
+					//@ts-ignore
 					style={{ fontSize: '1.1rem', padding: '10px' }}
 				/>
 			</Form.Group>

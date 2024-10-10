@@ -6,11 +6,11 @@
 //
 
 //Background Colors
-$brand-light-bg:                          #ffffff;
+$brand-light-bg:                          #fdfdfd;
 $brand-dark-bg:                           #0c213a;
-$sidebar-light-bg:                        #ffffff;
+$sidebar-light-bg:                        #fdfdfd;
 $sidebar-dark-bg:                         #0c213a;
-$header-light-bg:                         #ffffff;
+$header-light-bg:                         #fdfdfd;
 $header-dark-bg:                          #0c213a;
 
 // Toptbar Variables
@@ -45,7 +45,7 @@ $sidebar-item-dark-active-color:          #ffffff;
 $sidebar-item-dark-active-bg:             #38414a;
 $sidebar-item-hover-dark-color:           #e6e6e6;
 $sidebar-sub-item-dark-color:             #a9baca;
-$sidebar-sub-item-hover-dark-color:       #e6e6e6;;
+$sidebar-sub-item-hover-dark-color:       #e6e6e6;
 $sidebar-arrow-dark-color:                #a9baca;
 $sidebar-item-active-dark-color:          #ffffff;
 $sidebar-second-item-active-dark-color:   #f7f8f9;
@@ -1096,7 +1096,7 @@ $card-cap-bg:                       rgba($black, .03);
 $card-cap-color:                    null;
 $card-height:                       null;
 $card-color:                        null;
-$card-bg:                           #ffffff;
+$card-bg:                           #fdfdfd;
 $card-img-overlay-padding:          $spacer;
 $card-group-margin:                 $grid-gutter-width / 2;
 // scss-docs-end card-variables

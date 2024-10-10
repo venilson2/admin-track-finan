@@ -78,6 +78,7 @@ const Login = () => {
 													label="senha"
 													control={control}
 													placeholder="digite sua senha"
+													//@ts-ignore
 													style={{ fontSize: '1.1rem', padding: '10px' }}
 												/>
 											</Form.Group>
